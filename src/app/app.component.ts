@@ -67,8 +67,12 @@ export class AppComponent implements OnInit {
   selectedQuiz: QuizDisplay = undefined;
 
   selectQuiz(q: QuizDisplay) {
+
+    if (q != this.selectedQuiz) {
+      this.detailsAnimationState = "finalPosition";
+    }
+
     this.selectedQuiz = q;
-    this.detailsAnimationState = "finalPosition";
   }
 
   addNewQuiz() {
